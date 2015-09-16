@@ -5,7 +5,7 @@
     <artifactId>springMVC</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>springMVC-web</artifactId>
+  <artifactId>springMVC-server</artifactId>
   <packaging>war</packaging>
   <properties>
   	<spring.version>4.2.0.RELEASE</spring.version>
@@ -24,19 +24,9 @@
 		<version>${spring.version}</version>
 	</dependency>
 	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-oxm</artifactId>
-		<version>${spring.version}</version>
-	</dependency>
-	<dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>javax.servlet-api</artifactId>
 		<version>${servlet.version}</version>
-	</dependency>
-	<dependency>
-		<groupId>javax.xml.bind</groupId>
-		<artifactId>jaxb-api</artifactId>
-		<version>2.2.12</version>
 	</dependency>
 	<dependency>
 		<groupId>com.fasterxml.jackson.core</groupId>
@@ -57,8 +47,8 @@
 			<artifactId>maven-jetty-plugin</artifactId>
 			<version>6.1.10</version>
 			<configuration>
-				<webApp>${basedir}/target/web.war</webApp>
-				<contextPath>/web</contextPath>
+				<webApp>${basedir}/target/server.war</webApp>
+				<contextPath>/server</contextPath>
 			</configuration>
 		</plugin>
 	</plugins>

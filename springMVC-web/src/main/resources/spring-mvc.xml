@@ -25,7 +25,15 @@
         <property name="order" value="2"></property>  
     </bean>
     
-    <bean id="requestMappingHandlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>  
+    <bean id="requestMappingHandlerAdapter" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+    	<property name="messageConverters">
+    		<list>
+    			<ref bean="jsonHttpMessageConvertor"/>
+    		</list>
+    	</property>
+    </bean>  
+    <bean id="xmlHttpMessageConvertor" class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter"/>
+    <bean id="jsonHttpMessageConvertor" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
     <bean id="requestMappingHandlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">  
         <property name="interceptors">  
             <list>  
